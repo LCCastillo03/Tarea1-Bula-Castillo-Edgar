@@ -179,7 +179,7 @@ class FlutterCoursePage extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(Icons.folder, color: Colors.blue),
                   title: Text("Sudoku"),
-                  trailing: Icon(Icons.more_vert),
+                  trailing: Icon(Icons.more_vert_rounded),
                 ),
               ),
             ),
@@ -200,7 +200,7 @@ class FlutterCoursePage extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(Icons.folder, color: Colors.blue),
                   title: Text("Random user"),
-                  trailing: Icon(Icons.more_vert),
+                  trailing: Icon(Icons.more_vert_rounded),
                 ),
               ),
             ),
@@ -221,7 +221,7 @@ class FlutterCoursePage extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(Icons.folder, color: Colors.blue),
                   title: Text("Note Taking"),
-                  trailing: Icon(Icons.more_vert),
+                  trailing: Icon(Icons.more_vert_rounded),
                 ),
               ),
             ),
@@ -242,7 +242,7 @@ class FlutterCoursePage extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(Icons.folder, color: Colors.blue),
                   title: Text("Weather"),
-                  trailing: Icon(Icons.more_vert),
+                  trailing: Icon(Icons.more_vert_rounded),
                 ),
               ),
             ),
@@ -263,7 +263,7 @@ class FlutterCoursePage extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(Icons.folder, color: Colors.blue),
                   title: Text("Delivery App"),
-                  trailing: Icon(Icons.more_vert),
+                  trailing: Icon(Icons.more_vert_rounded),
                 ),
               ),
             ),
