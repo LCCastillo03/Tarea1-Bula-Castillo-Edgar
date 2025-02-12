@@ -13,9 +13,7 @@ class FlutterCoursePage extends StatelessWidget {
             children: <Widget>[
               buildHeader(),
               buildCourseFocus(),
-              Divider(
-                height: 80,
-              ),
+              Divider(height: 80),
               const SizedBox(height: 20),
               buildModules(),
               const SizedBox(height: 20),
