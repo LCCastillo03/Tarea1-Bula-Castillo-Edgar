@@ -1,5 +1,48 @@
 import 'package:flutter/material.dart';
 
+class SingleModule extends StatelessWidget {
+  const SingleModule({super.key, required this.title, required this.icon});
+  final String title;
+  final Icon icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(8),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.shade200,
+                  spreadRadius: 5,
+                  blurRadius: 10,
+                ),
+              ]
+            ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+              child: icon,
+            )
+          ),
+          SizedBox(height: 10), // Adds 20 pixels of space
+          Text(
+            title,
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      )
+    );
+  }
+
+}
+
 class FlutterCoursePage extends StatelessWidget {
   const FlutterCoursePage({super.key});
 
@@ -144,7 +187,30 @@ class FlutterCoursePage extends StatelessWidget {
   }
 
   Widget buildModules() {
-    return const Text("Modules");
+    return Expanded(
+      child: Column(
+        children: [
+          Text(
+            "Modules",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Expanded(
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                SingleModule(title: "Introduction", icon: Icon(Icons.book, color: Colors.blue, size: 40)),
+                SingleModule(title: "X design", icon: Icon(Icons.design_services, color: Colors.red, size: 40)),
+                SingleModule(title: "State management", icon: Icon(Icons.storage, color: Colors.orange, size: 40)),
+                SingleModule(title: "Testing", icon: Icon(Icons.bug_report, color: Colors.grey, size: 40)),
+                SingleModule(title: "Networking", icon: Icon(Icons.network_check, color: Colors.blue, size: 40)),
+              ]
+            )
+          )
+        ]
+      ),
+    );
   }
 
   Widget buildProjectList() {
