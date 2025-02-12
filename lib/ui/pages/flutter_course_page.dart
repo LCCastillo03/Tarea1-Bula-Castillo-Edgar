@@ -181,6 +181,7 @@ class FlutterCoursePage extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(height: 25),
       ],
     );
   }
