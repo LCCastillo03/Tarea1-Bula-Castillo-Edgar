@@ -50,16 +50,15 @@ class FlutterCoursePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               buildHeader(),
               buildCourseFocus(),
-              Divider(height: 80),
-              const SizedBox(height: 20),
+              Divider(height: 20),
               buildModules(),
-              const SizedBox(height: 20),
+              Divider(height: 20),
               buildProjectList()
             ],
           ),
@@ -187,157 +186,162 @@ class FlutterCoursePage extends StatelessWidget {
   }
 
   Widget buildModules() {
-    return Expanded(
+    return SizedBox(
+      height: 180,
       child: Column(
-        children: [
+        children: 
+        [
           Text(
             "Modules",
             style: TextStyle(
               fontWeight: FontWeight.bold,
+              fontSize: 20,
             ),
           ),
           Expanded(
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                SingleModule(title: "Introduction", icon: Icon(Icons.book, color: Colors.blue, size: 40)),
-                SingleModule(title: "X design", icon: Icon(Icons.design_services, color: Colors.red, size: 40)),
-                SingleModule(title: "State management", icon: Icon(Icons.storage, color: Colors.orange, size: 40)),
-                SingleModule(title: "Testing", icon: Icon(Icons.bug_report, color: Colors.grey, size: 40)),
-                SingleModule(title: "Networking", icon: Icon(Icons.network_check, color: Colors.blue, size: 40)),
-              ]
-            )
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              SingleModule(title: "Introduction", icon: Icon(Icons.book, color: Colors.blue, size: 40)),
+              SingleModule(title: "X design", icon: Icon(Icons.design_services, color: Colors.red, size: 40)),
+              SingleModule(title: "State management", icon: Icon(Icons.storage, color: Colors.orange, size: 40)),
+              SingleModule(title: "Testing", icon: Icon(Icons.bug_report, color: Colors.grey, size: 40)),
+              SingleModule(title: "Networking", icon: Icon(Icons.network_check, color: Colors.blue, size: 40)),
+            ]
           )
+            ),
         ]
-      ),
-    );
+      )
+      );
   }
 
   Widget buildProjectList() {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-        child: Text(
-          "Projects",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+  return Expanded(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          child: Text(
+            "Projects",
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
         ),
-      ),
-      SizedBox(
-        height: 200.0,
-        child: ListView(
-          shrinkWrap: true,
-          children:  [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.shade200,
-                      blurRadius: 6,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: ListTile(
-                  leading: Icon(Icons.folder, color: Colors.blue),
-                  title: Text("Sudoku"),
-                  trailing: Icon(Icons.more_vert_rounded),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.shade200,
-                      blurRadius: 6,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: ListTile(
-                  leading: Icon(Icons.folder, color: Colors.blue),
-                  title: Text("Random user"),
-                  trailing: Icon(Icons.more_vert_rounded),
+        Expanded(
+          //height: 150.0,
+          child: ListView(
+            shrinkWrap: true,
+            children:  [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.shade200,
+                        blurRadius: 6,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ListTile(
+                    leading: Icon(Icons.folder, color: Colors.blue),
+                    title: Text("Sudoku"),
+                    trailing: Icon(Icons.more_vert_rounded),
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.shade200,
-                      blurRadius: 6,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: ListTile(
-                  leading: Icon(Icons.folder, color: Colors.blue),
-                  title: Text("Note Taking"),
-                  trailing: Icon(Icons.more_vert_rounded),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.shade200,
-                      blurRadius: 6,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: ListTile(
-                  leading: Icon(Icons.folder, color: Colors.blue),
-                  title: Text("Weather"),
-                  trailing: Icon(Icons.more_vert_rounded),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.shade200,
+                        blurRadius: 6,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ListTile(
+                    leading: Icon(Icons.folder, color: Colors.blue),
+                    title: Text("Random user"),
+                    trailing: Icon(Icons.more_vert_rounded),
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.shade200,
-                      blurRadius: 6,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: ListTile(
-                  leading: Icon(Icons.folder, color: Colors.blue),
-                  title: Text("Delivery App"),
-                  trailing: Icon(Icons.more_vert_rounded),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.shade200,
+                        blurRadius: 6,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ListTile(
+                    leading: Icon(Icons.folder, color: Colors.blue),
+                    title: Text("Note Taking"),
+                    trailing: Icon(Icons.more_vert_rounded),
+                  ),
                 ),
               ),
-            ),
-            
-          ],
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.shade200,
+                        blurRadius: 6,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ListTile(
+                    leading: Icon(Icons.folder, color: Colors.blue),
+                    title: Text("Weather"),
+                    trailing: Icon(Icons.more_vert_rounded),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.shade200,
+                        blurRadius: 6,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ListTile(
+                    leading: Icon(Icons.folder, color: Colors.blue),
+                    title: Text("Delivery App"),
+                    trailing: Icon(Icons.more_vert_rounded),
+                  ),
+                ),
+              ),
+              
+            ],
+          ),
         ),
-      ),
-    ],
+      ],
+    ),
   );
 }
 }
